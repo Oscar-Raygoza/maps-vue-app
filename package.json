@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "author": "Oscar-Raygoza",
   "private": false,
-  "email": "oscar.eduardo.raygoza@gmail.com",
+  "email": "oscar.eduardo.raygoza@gmail.com", 
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
