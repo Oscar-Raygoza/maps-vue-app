@@ -1,22 +1,26 @@
 <template>
   <div class="HomeView">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld :msg="'10'"/>
+    <MapVioew />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-import { usePlacesStore } from '../composables/usePlacesStore';
+import { defineComponent } from "vue";
+
+/**
+ * Components
+ */
+import MapVioew from "@/components/mapview/MapView.vue"; // @ is an alias to /src
+
+import { usePlacesStore } from "../composables/usePlacesStore";
 
 export default defineComponent({
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    HelloWorld,
+    MapVioew,
   },
   setup() {
     usePlacesStore();
-  }
+  },
 });
 </script>

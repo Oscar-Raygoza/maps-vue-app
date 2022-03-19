@@ -15,6 +15,7 @@ export interface StateInterface {
   places: IPlacesState
 }
 
+
 export default createStore<StateInterface>({
   modules: {
     //example: exampleModule,
