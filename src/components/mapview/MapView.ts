@@ -23,7 +23,6 @@ export default defineComponent({
       if (!userLocation) return;
 
       await Promise.resolve();
-
       const map = new Mapboxgl.Map({
         container: mapRef.value, // container ID
         style: "mapbox://styles/mapbox/dark-v10", // style URL
@@ -40,11 +39,11 @@ export default defineComponent({
         .setPopup(myLocationPopup)
         .addTo(map);
 
-        setMap(map);
+      setMap(map);
     };
 
     onMounted(() => {
-      if (isUserLocationReady) return initMap();
+      if (isUserLocationReady.value) return initMap();
     });
 
     watch(
@@ -57,7 +56,7 @@ export default defineComponent({
     );
     return {
       isUserLocationReady,
-      mapRef
+      mapRef,
     };
   },
 });

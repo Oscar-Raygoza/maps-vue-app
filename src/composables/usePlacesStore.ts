@@ -1,30 +1,32 @@
-import { computed, ComputedRef, onMounted } from "vue";
-import { useStore } from "vuex";
-import { StateInterface } from "../store";
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
+import { StateInterface } from '@/store/index';
 
-export interface IComposableUsePlacesStore {
-  isLoading: ComputedRef<boolean>;
-  userLocation?: ComputedRef<[number, number] | undefined>; // [latitude, longitude] or undefined
-  isUserLocationReady: ComputedRef<boolean>; // [latitude, longitude] or undefined
-}
 
-export const usePlacesStore = (): IComposableUsePlacesStore => {
-  const store = useStore<StateInterface>();
-  onMounted(() => {
-    if (!store.getters["places/isUserLocationReady"]) {
-      store.dispatch("places/getInitialLocation");
+export const usePlacesStore = () => {
+
+    const store = useStore<StateInterface>();
+
+
+    onMounted( () => {
+        if ( !store.getters['places/isUserLocationReady'] ) {
+            store.dispatch('places/getInitialLocation');
+            console.log(store)
+        }
+    });
+
+    console.log(store.getters)
+    return {
+        // State
+        isLoading: computed( () => store.state.places.isLoading ),
+        userLocation: computed( () => store.state.places.userLocation ),
+
+        isUserLocationReady: computed( () => store.getters['places/isUserLocationReady'] ),
+        // Getters
+
+        // Actions
+
+        // Mutations
+
     }
-  });
-
-  return {
-    // state
-    isLoading: computed(() => store.state.places.isLoading),
-    userLocation: computed(() => store.state.places.userLocation),
-
-    // getters
-    isUserLocationReady: computed(() => store.getters["places/isUserLocationReady"])
-    // actions
-   
-    // mutations
-  }
-};
+}

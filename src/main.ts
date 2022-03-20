@@ -3,6 +3,9 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+/**
+ * Mapbox
+ */
 import mapboxgl from "mapbox-gl";
 
 mapboxgl.accessToken =
@@ -11,4 +14,5 @@ mapboxgl.accessToken =
 if (!navigator.geolocation) {
   throw new Error("Geolocation is not supported by your browser.");
 }
+
 createApp(App).use(store).use(router).mount("#app");
