@@ -10,6 +10,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'system-ui';
   
 }
 .mapboxgl-ctrl-attrib-inner, .mapboxgl-ctrl-icon, .mapboxgl-ctrl {
