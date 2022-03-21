@@ -22,7 +22,7 @@ export default defineComponent({
   setup() {
     const { userLocation, isUserLocationReady } = usePlacesStore();
     const { map, isMapReady } = useMapStore();
-    
+
     return {
       isButtonReady: computed<boolean>(
         () => isUserLocationReady.value && isMapReady.value

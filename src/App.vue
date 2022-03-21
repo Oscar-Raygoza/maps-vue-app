@@ -16,7 +16,7 @@
   display: none !important;
 }
 body {
-  background-color: #2c3e50;
+  background-color: #f2f2f2;
 }
 #app {
   -moz-osx-font-smoothing: grayscale;

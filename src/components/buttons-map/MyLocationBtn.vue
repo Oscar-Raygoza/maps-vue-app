@@ -15,13 +15,13 @@ a {
   bottom: 15px;
   padding: 10px;
   text-decoration: none;
-  background-color: #fff;
+  background-color: #f2f2f2;
   border-radius: 5px;
-  color: #0d3150;
+  color: #0099ff;
   font-size: 1em;
   &:hover {
-    background-color: #f2f2f1;
-    color: rgb(232, 218, 22);
+    background-color: #ffffff;
+    color: rgb(0, 89, 255);
   }
 }
 </style>
