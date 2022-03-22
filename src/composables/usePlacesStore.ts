@@ -25,7 +25,7 @@ export const usePlacesStore = () => {
         // Getters
 
         // Actions
-
+        searchPlaces: ( query: string ) => store.dispatch('places/searchPlaces', query),
         // Mutations
 
     }

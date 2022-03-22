@@ -5,13 +5,13 @@ import { useMapStore } from "../../composables/useMapStore";
 /**
  * Components
  */
-import { Jawn } from "vue-loading-spinner";
+import { Jawn as Spinner } from "vue-loading-spinner";
 import Mapboxgl from "mapbox-gl";
 
 export default defineComponent({
   name: "MapView",
   components: {
-    Jawn,
+    Spinner,
   },
   setup() {
     const mapRef = ref<HTMLDivElement | null>();

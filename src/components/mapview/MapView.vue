@@ -2,7 +2,7 @@
 
 <template>
   <div v-if="!isUserLocationReady" class="isLoading">
-    <jawn class="spinner" size="150px" color="#000000" />
+    <Spinner class="spinner" size="150px" color="#000000" />
   </div>
 
   <div v-show="isUserLocationReady" class="map-container" ref="mapRef">
