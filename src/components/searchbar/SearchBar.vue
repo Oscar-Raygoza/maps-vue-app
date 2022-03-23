@@ -1,7 +1,7 @@
 <script lang="ts" src="./SearchBar"/>
 <template>
   <div class="searchbar-container">
-    <input class="form-control" type="text" placeholder="Search" v-model="searchQuery"/>
+    <input v-if="isButtonReady" class="form-control" type="text" placeholder="Search" v-model="searchQuery"/>
 
     <SearchResults />
   </div>
@@ -15,6 +15,7 @@
   left: 30px;
   z-index: 99;
   border-radius: 5px;
+  max-width: 300px;
 }
 input {
   border: none;
