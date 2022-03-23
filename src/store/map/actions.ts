@@ -1,14 +1,38 @@
-import { ActionTree } from 'vuex';
-import { IMapState } from './state';
-import { StateInterface } from '../index';
+import { ActionTree } from "vuex";
+import { MapState } from "./state";
+import { StateInterface } from "../index";
+import { searchDirectionsAPI } from "@/apis";
 
+import { DirectionsResponse } from "@/interfaces/DirectionsResponse";
+export type LngLat = [number, number];
 
-const actions: ActionTree<IMapState, StateInterface> = {
-    someAction( /*{ commit }, payload  */ ) {
-        // a line to prevent linter errors
-    }
+export enum Profile {
+  TRAFFIC = 'traffic',
+  DRIVING = 'driving',
+  WALKING = 'walking',
+  CYCLING = 'cycling',
 }
 
+const actions: ActionTree<MapState, StateInterface> = {
+  async getRouteBetweenPoints(
+    { commit },
+    { start, end, profile }: { start: LngLat; end: LngLat; profile: Profile  }
+  ) {
+    const response = await searchDirectionsAPI.get<DirectionsResponse>(
+      `/${profile}/${start.join(",")};${end.join(",")}`
+    );
 
+    const coordinates = response.data.routes[0].geometry.coordinates;
+    const distance = response.data.routes[0].distance;
+    const duration = response.data.routes[0].duration;
+
+    commit("setDistanceDurationRoute", {
+      distance,
+      duration,
+      profile
+    });
+    commit("setRoutePolyline", coordinates);
+  },
+};
 
 export default actions;

@@ -1,9 +1,9 @@
 import { GetterTree } from 'vuex';
-import { IMapState } from './state';
+import { MapState } from './state';
 import { StateInterface } from '../index';
 
 
-const getters: GetterTree<IMapState, StateInterface> = {
+const getters: GetterTree<MapState, StateInterface> = {
     isMapReady( state  ) {
         return !!state.map;
     }

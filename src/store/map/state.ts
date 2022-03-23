@@ -1,19 +1,21 @@
-import Mapboxgl from 'mapbox-gl';
+import Mapboxgl from "mapbox-gl";
 
-export interface IMapState {
-    map?: Mapboxgl.Map;
-    markers: Mapboxgl.Marker[];
-    distance?: number;
-    duration?: number;
+export interface MapState {
+  map?: Mapboxgl.Map;
+  markers: Mapboxgl.Marker[];
+  distance?: number;
+  duration?: number;
+  profile?: string;
 }
 
-function state(): IMapState {
-    return {
-        map: undefined,
-        markers: [],
-        distance: undefined,
-        duration: undefined,
-    }
+function state(): MapState {
+  return {
+    map: undefined,
+    markers: [],
+    distance: undefined,
+    duration: undefined,
+    profile: undefined,
+  };
 }
 
 export default state;

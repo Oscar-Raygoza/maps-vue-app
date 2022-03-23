@@ -1,8 +1,8 @@
 import { GetterTree } from "vuex";
-import { IPlacesState } from "./state";
+import { PlacesState } from "./state";
 import { StateInterface } from "../index";
 
-const getters: GetterTree<IPlacesState, StateInterface> = {
+const getters: GetterTree<PlacesState, StateInterface> = {
   isUserLocationReady(state) {
     return !!state.userLocation;
   },

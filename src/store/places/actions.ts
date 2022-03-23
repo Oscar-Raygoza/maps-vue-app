@@ -1,10 +1,10 @@
 import { ActionTree } from "vuex";
-import { IPlacesState } from "./state";
+import { PlacesState } from "./state";
 import { StateInterface } from "../index";
 import { searchPlacesAPI } from "@/apis";
 
-import { Feature, PlacesResponse } from "@/interfaces/places";
-const actions: ActionTree<IPlacesState, StateInterface> = {
+import { Feature, PlacesResponse } from "@/interfaces/PlacesResponse";
+const actions: ActionTree<PlacesState, StateInterface> = {
   getInitialLocation({ commit }) {
     // a line to prevent linter errors
     navigator.geolocation.getCurrentPosition(({ coords }) => {
@@ -30,7 +30,12 @@ const actions: ActionTree<IPlacesState, StateInterface> = {
     commit("setIsLoadingPlaces");
     
     const response = await searchPlacesAPI.get<PlacesResponse>(
-      `/${query}.json`
+      `/${query}.json`, {
+        params: {
+          proximity: `${state.userLocation[0]},${state.userLocation[1]}`,
+          types: 'postcode,poi,place,region,locality,address,country,district'
+        }
+      }
     );
 
     commit("setPlaces", response.data.features);

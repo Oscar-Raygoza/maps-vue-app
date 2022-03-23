@@ -2,6 +2,7 @@
   <div class="HomeView">
     <MapVioew />
     <SearchBar />
+    <TripDetails />
     <MyLocationBtn />
   </div>
 </template>
@@ -14,7 +15,8 @@ import { defineComponent } from "vue";
  */
 import MapVioew from "@/components/mapview/MapView.vue"; // @ is an alias to /src
 import SearchBar from "@/components/searchbar/SearchBar.vue"; // @ is an alias to /src
-import MyLocationBtn from "@/components/buttons-map/MyLocationBtn.vue"; // @ is an alias to /src
+import MyLocationBtn from "@/components/buttons-map/MyLocationBtn/MyLocationBtn.vue"; // @ is an alias to /src
+import TripDetails from "@/components/trip-details/TripDetails.vue"; // @ is an alias to /src
 
 import { usePlacesStore } from "@/composables";
 
@@ -23,7 +25,8 @@ export default defineComponent({
   components: {
     MapVioew,
     SearchBar,
-    MyLocationBtn
+    MyLocationBtn,
+    TripDetails,
   },
   setup() {
     usePlacesStore();

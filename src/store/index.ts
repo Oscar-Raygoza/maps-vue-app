@@ -5,10 +5,10 @@ import { createStore } from 'vuex';
 //import { ExampleStateInterface } from './module-template/state';
 
 import placesModule from './places';
-import { IPlacesState } from './places/state';
+import { PlacesState } from './places/state';
 
 import mapModule from './map';
-import { IMapState } from './map/state';
+import { MapState } from './map/state';
 
 
 export interface StateInterface {
@@ -16,8 +16,8 @@ export interface StateInterface {
   // example: ExampleStateInterface;
   // Declared as unknown to avoid linting issue. Best to strongly type as per the line above.
   //example: ExampleStateInterface
-  places: IPlacesState,
-  map: IMapState
+  places: PlacesState,
+  map: MapState
 }
 
 export default createStore<StateInterface>({

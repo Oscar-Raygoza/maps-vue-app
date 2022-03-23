@@ -1,18 +1,20 @@
-import { Feature } from "@/interfaces/places";
+import { Feature } from "@/interfaces/PlacesResponse";
 
-export interface IPlacesState {
+export interface PlacesState {
   isLoading: boolean;
   isLoadingPlaces: boolean;
   places: Feature[];
   userLocation?: [number, number]; // [latitude, longitude]
+  placeSelected?: Feature
 }
 
-function state(): IPlacesState {
+function state(): PlacesState {
   return {
     isLoading: true,
     isLoadingPlaces: false,
     places: [],
     userLocation: undefined,
+    placeSelected: undefined
   };
 }
 
