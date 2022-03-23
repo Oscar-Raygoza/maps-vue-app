@@ -10,7 +10,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'system-ui';
+  font-family: 'system-ui', 'Verdana', 'Tahoma', 'Trebuchet MS';
   
 }
 .mapboxgl-ctrl-attrib-inner, .mapboxgl-ctrl-icon, .mapboxgl-ctrl {
