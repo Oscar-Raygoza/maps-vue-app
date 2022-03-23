@@ -16,7 +16,7 @@ export default defineComponent({
   setup() {
     const mapRef = ref<HTMLDivElement | null>();
     const { userLocation, isUserLocationReady } = usePlacesStore();
-    const { map, distance, duration, setMap } = useMapStore();
+    const { setMap } = useMapStore();
 
     const initMap = async () => {
       if (!mapRef.value) return;
