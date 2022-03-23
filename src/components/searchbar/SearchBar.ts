@@ -7,14 +7,6 @@ import { useMapStore, usePlacesStore } from "@/composables";
 import SearchResults from "@/components/searchbar/SearchResults.vue";
 
 /**
- * FontAwesomeIcon
- */
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
-
-library.add(faLocationCrosshairs);
-
-/**
  * Icons
  */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -26,15 +18,11 @@ export default defineComponent({
     SearchResults,
   },
   setup() {
-    const { userLocation, isUserLocationReady, searchPlaces } = usePlacesStore();
-    const { map, isMapReady } = useMapStore();
+    const { isUserLocationReady, searchPlaces } = usePlacesStore();
+    const { isMapReady } = useMapStore();
 
     const debouncedSearchTiemeOut = ref();
     const debouncedSearchValue = ref();
-
-    onMounted(() => {
-      //
-    });
 
     return {
       isButtonReady: computed<boolean>(
