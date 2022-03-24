@@ -1,6 +1,8 @@
 import { computed, defineComponent, ref, watch } from "vue";
 import { useMapStore, usePlacesStore } from "@/composables";
 
+import { DoubleBounce as Spinner } from "vue-loading-spinner";
+
 /**
  * FontAwesomeIcon
  */
@@ -31,11 +33,12 @@ export default defineComponent({
   name: "TripDetails",
   components: {
     FontAwesomeIcon,
+    Spinner
   },
   setup() {
     const { isUserLocationReady, userLocation, getPlaceSelected } =
       usePlacesStore();
-    const { duration, distance, profile, isMapReady, getRouteBetweenPoints } =
+    const { duration, distance, profile, isMapReady, getRouteBetweenPoints, isLoadingRoute } =
       useMapStore();
 
     return {
@@ -59,7 +62,8 @@ export default defineComponent({
       distance,
       duration,
       Profile,
-      profile
+      profile,
+      isLoadingRoute
     };
   },
 });

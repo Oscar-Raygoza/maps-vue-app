@@ -15,6 +15,7 @@ export const useMapStore = () => {
     distance: computed(() => store.state.map.distance),
     duration: computed(() => store.state.map.duration),
     profile: computed(() => store.state.map.profile),
+    isLoadingRoute: computed(() => store.state.map.isLoadingRoute),
 
     // Getters
     isMapReady: computed<boolean>(() => store.getters["map/isMapReady"]),

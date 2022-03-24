@@ -7,6 +7,9 @@ const mutation: MutationTree<MapState> = {
   setMap(state: MapState, map: Mapboxgl.Map) {
     state.map = map;
   },
+  setIsLoadingRoute(state: MapState, isLoadingRoute: boolean) {
+    state.isLoadingRoute = isLoadingRoute;
+  },
   setDistanceDurationRoute(
     state: MapState,
     { distance, duration, profile }: { distance: number; duration: number, profile: string }

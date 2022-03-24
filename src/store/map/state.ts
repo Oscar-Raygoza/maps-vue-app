@@ -6,6 +6,7 @@ export interface MapState {
   distance?: number;
   duration?: number;
   profile?: string;
+  isLoadingRoute?: boolean;
 }
 
 function state(): MapState {
@@ -15,6 +16,7 @@ function state(): MapState {
     distance: undefined,
     duration: undefined,
     profile: undefined,
+    isLoadingRoute: false
   };
 }
 

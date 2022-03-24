@@ -1,7 +1,11 @@
 <script lang="ts" src="./TripDetails"/>
 
 <template>
-  <div v-if="distance && duration" class="trip-container">
+  <div v-if="isLoadingRoute">
+    <Spinner class="spinner" size="50px" background="#09f" />
+  </div>
+
+  <div v-else-if="distance && duration && profile" class="trip-container">
     <div class="column">
       <a
         :class="`move-btn ${profile === Profile.DRIVING ? 'active' : ''}`"
@@ -57,6 +61,8 @@
 .move-btn {
   padding: 7px;
   background-color: rgba(255, 255, 255, 0.315);
+  transition: background-color 1000ms linear;
+
   color: rgb(0, 0, 0);
   width: 20px;
   height: 20px;
@@ -72,5 +78,11 @@
     background-color: rgb(255, 255, 255);
     color: #000000;
   }
+}
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
