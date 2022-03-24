@@ -6,11 +6,12 @@
   <router-view />
 </template>
 
-<style>
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 * {
   margin: 0;
   padding: 0;
-  font-family: 'system-ui', 'Verdana', 'Tahoma', 'Trebuchet MS';
+  font-family: 'Poppins','system-ui', 'Verdana', 'Tahoma', 'Trebuchet MS';
   
 }
 .mapboxgl-ctrl-attrib-inner, .mapboxgl-ctrl-icon, .mapboxgl-ctrl {
