@@ -1,4 +1,5 @@
-# maps-app
+# <a href="https://oscar-raygoza.github.io/maps-vue-app/">⚡ Maps Vuex and Typescript APP ⚡</a>
+![](docs/maps-app.png)
 
 ## Project setup
 ```
