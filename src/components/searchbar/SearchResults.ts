@@ -52,7 +52,7 @@ export default defineComponent({
         });
       },
       onClickDirection: (place: Feature) => {
-        if (!userLocation.value) return;
+        if (!userLocation.value) throw new Error('User location is not ready!');
 
         const [lng, lat] = place.center;
 
@@ -62,6 +62,7 @@ export default defineComponent({
         const end: [number, number] = [lng, lat];
         setPlaceSelected(place);
         getRouteBetweenPoints(start, end, Profile.DRIVING); //default init route
+        
 
         // Todo: vuex create profile state && set profile state ✅ 
       },

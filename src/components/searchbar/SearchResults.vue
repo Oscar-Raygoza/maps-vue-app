@@ -73,7 +73,6 @@
 
 .title-place {
   font-weight: 700;
-  text-transform: uppercase;
   margin-bottom: 15px;
 }
 .description-place {
